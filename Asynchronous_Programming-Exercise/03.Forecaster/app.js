@@ -23,7 +23,7 @@ function attachEvents() {
 
         upcomingDiv.style.display = 'none';
 
-        const code = await getLocationData();
+        const code = await getLocationCode();
         if (code == undefined) return;
 
         const [currentData, upcomingForecast] = await Promise.all([
@@ -57,7 +57,7 @@ function attachEvents() {
         }
     }
 
-    async function getLocationData() {
+    async function getLocationCode() {
         const url = 'http://localhost:3030/jsonstore/forecaster/locations';
 
         try {
