@@ -62,9 +62,10 @@ async function createContact() {
     const phone = phoneInput.value.trim();
     personInput.value = '';
     phoneInput.value = '';
-    contactsList.textContent = 'Creating contact...';
 
     if (person == '' || phone == '') return;
+    
+    contactsList.textContent = 'Creating contact...';
 
     const options = {
         method: 'post',
