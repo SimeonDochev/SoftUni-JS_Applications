@@ -39,8 +39,6 @@ async function deleteContact(key) {
     
     const options = {
         method: 'delete',
-        headers: {},
-        body: {}
     };
 
     try {
