@@ -18,13 +18,14 @@ async function onRegister(event) {
     }
 
     try {
-        const res = await fetch('http:localhost:3030/users/register', {
+        const res = await fetch('http://localhost:3030/users/register', {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({email, password})
+            body: JSON.stringify({ email, password })
         });
+        
         if (res.ok == false) {
             const error = await res.json();
             throw new Error(error.message);
