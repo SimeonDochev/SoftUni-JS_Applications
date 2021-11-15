@@ -55,6 +55,7 @@ describe('Tests', async function() {
         expect(rows[2]).to.contain('C# Fundamentals');
         expect(rows[2]).to.contain('Nakov');
     });
+
     it('Creates a book', async () => {
         await page.goto('http://localhost:5500');
 
@@ -71,6 +72,8 @@ describe('Tests', async function() {
         expect(data.title).to.equal('Title');
         expect(data.author).to.equal('Author');
     });
+
+    //Doesn't work with enabled throttling.
     it('Edits a book', async () => {
         await page.route('**/jsonstore/collections/books*', (route) => {
             route.fulfill(json(mockData));
@@ -97,6 +100,7 @@ describe('Tests', async function() {
         
         page.waitForTimeout(10000);
     });
+    
     it('Deletes a book', async () => {
         await page.route('**/jsonstore/collections/books*', (route) => {
             route.fulfill(json(mockData));
