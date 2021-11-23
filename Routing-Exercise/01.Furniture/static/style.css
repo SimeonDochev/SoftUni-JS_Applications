@@ -215,3 +215,8 @@ img {
 #user, #guest {
     display: none;
 }
+
+.error {
+    color: red;
+    font-size: 125%;
+}

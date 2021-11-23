@@ -10,7 +10,7 @@ async function request(url, options) {
             if (response.status == 403) {
                 clearUserData();
             }
-            const error = await response.json().error;
+            const error = await response.json();
             throw new Error(error.message);
         }
 
