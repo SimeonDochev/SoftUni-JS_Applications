@@ -55,7 +55,6 @@ export function registerPage(ctx) {
                         rePass: rePass == ''
                     }
                 };
-
             }
             if (password != rePass) {
                 throw {
@@ -65,7 +64,6 @@ export function registerPage(ctx) {
                         rePass: true
                     }
                 };
-                
             }
             await register(email, password);
             ctx.updateUserNav();
