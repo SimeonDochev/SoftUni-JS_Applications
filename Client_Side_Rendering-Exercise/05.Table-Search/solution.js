@@ -29,8 +29,7 @@ function onSearch() {
     const value = input.value.trim();
     for (let student of students) {
         student.match = Object.entries(student.item)
-        .some(([k, v]) => k != '_id' && value && v.toLocaleLowerCase()
-        .includes(value.toLocaleLowerCase()));
+        .some(([k, v]) => k != '_id' && value && v.toLocaleLowerCase().includes(value.toLocaleLowerCase()));
     }
 
     update();
